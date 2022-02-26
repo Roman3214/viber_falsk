@@ -1,6 +1,6 @@
 import json
 import os
-#os.system('ngrok http 8887')
+
 
 def get_ngrok_address():
     os.system("curl  http://localhost:4040/api/tunnels > tunnels.json")
