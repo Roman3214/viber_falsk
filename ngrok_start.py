@@ -23,14 +23,11 @@ def get_ngrok_address():
         file.write(str(file_json_viber))
     return dict(zip(['http', 'https'], [i['public_url'] for i in datajson['tunnels']])) 
 
-# add filemode="w" to overwrite
-#logging.basicConfig(filename="sample.log", level=logging.INFO)
- 
+
 print(logging.debug("This is a debug message"))
 print(logging.info("Informational message"))
 logging.error("An error has happened!")
-#subprocess.run('dist\\ngrok_start.exe')
-#os.system('ngrok http 8887')
+
 
 
 
