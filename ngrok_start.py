@@ -41,4 +41,4 @@ for file in files:
 
 get_ngrok_address()
 
-os.system ('curl -# -i -g -H "X-Viber-Auth-Token: 4ebcf06bb7a7dc35-660577619c3cc428-b4d38da3cd44b45" -d @viber.json -X POST https://chatapi.viber.com/pa/set_webhook -v')
+os.system ('curl -# -i -g -H "X-Viber-Auth-Token: "<you_auto_token>" -d @viber.json -X POST https://chatapi.viber.com/pa/set_webhook -v')
