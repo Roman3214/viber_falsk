@@ -19,7 +19,7 @@ import uvicorn
 import json
 
 def init_webhooks(base_url):
-    viber.set_webhook('https://viber.com/botforimportantnotifications')
+    viber.set_webhook('https://viber.com/bot...')# you URL boting
     pass
 
 app = FastAPI()
