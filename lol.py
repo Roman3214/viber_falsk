@@ -104,7 +104,7 @@ class ViberSay():
             if viber_request.message.text == 'start':
                 
 
-                #self.viber.send_messages(to=session['uid'], messages=[TextMessage(text="hello")])
+                
                 self.send_buttons(uid=session['uid'])#, text=['start'], btns=3)
 
             if viber_request.message.text == 'Отделение пограничных состояний':
@@ -138,8 +138,6 @@ class ViberSay():
                 try:
                     conn = sqlite3.connect("users.db")
                     cursor = conn.cursor()
-                #cursor.execute("SELECT `user_id` FROM `users_telegram` WHERE `user_id` = ?", (f'{int(user_id)}',))
-                    
                     cursor.execute('INSERT OR IGNORE INTO "childrens_department" ("user_id" , "user_name") VALUES (?,?)', (f'{str(user_id)}',  f'{str(name_user)}', ))
                     
                     conn.commit()
@@ -156,14 +154,11 @@ class ViberSay():
             else:
                 viber_request.message.text == 'Отделение наркологии'
                 name_user = viber_request.sender.name
-                #user_surname = ViberConversationStartedRequest.user.name format l: /fs:fat32 /q
                 user_id = viber_request.sender.id
                 print(name_user, user_id)
                 try:
                     conn = sqlite3.connect("users.db")
                     cursor = conn.cursor()
-                #cursor.execute("SELECT `user_id` FROM `users_telegram` WHERE `user_id` = ?", (f'{int(user_id)}',))
-                    
                     cursor.execute('INSERT OR IGNORE INTO "narcology" ("user_id" , "user_name") VALUES (?,?)', (f'{str(user_id)}',  f'{str(name_user)}', ))
                     
                     conn.commit()
@@ -225,9 +220,6 @@ class ViberSay():
         self.viber.send_messages(session['uid'], [message])
         
   
-        #KEYBOARD["Buttons"].append(      )
-        
-
 
 
 if __name__ == "__main__":
